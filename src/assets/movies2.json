@@ -2,21 +2,42 @@
         "title": "El padrino",
         "age": 1988,
         "gender": "action",
-        "id": "1",
+        "id": 1,
         "language": "en"
     },
     {
         "title": "Scarface",
         "age": 1987,
         "gender": "action",
-        "id": "2",
+        "id": 2,
         "language": "it"
     },
     {
         "title": "Shrek",
         "age": 2000,
         "gender": "Comedia",
-        "id": "3",
+        "id": 3,
+        "language": "es"
+    },
+    {
+        "title": "La maldicion",
+        "age": 1800,
+        "gender": "Comedia",
+        "id": 4,
+        "language": "es"
+    },
+    {
+        "title": "Matrix",
+        "age": 2020,
+        "gender": "Comedia",
+        "id": 5,
+        "language": "es"
+    },
+    {
+        "title": "Princesas",
+        "age": 2010,
+        "gender": "Comedia",
+        "id": 6,
         "language": "es"
     }
 ]

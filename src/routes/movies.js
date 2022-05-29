@@ -79,32 +79,28 @@ router.put('/:id',(req,res)=>{
   router.delete('/:id',(req,res)=> {
 
     console.log(req.params);
-    const idRequest = req.params;
-    let msj='';
+ 
+    let position=0;
 
-    console.log(idRequest);
-
-
-    _.each(movies,(movie, i)=>{
-
-      console.log('movie.id-> '+movie.id);
-      console.log('movie.title-> '+movie.title);
-  
-        if(movie.id == idRequest){
-          movies.splice(i,1);
-          msj='Deleted' 
-  
-        }else{
-          msj='Nada Borrado'
-        }
-  
-      })
-  
-      res.send(msj); 
-  
-  
+    movies.forEach((movie) => {
       
+      if (movie.id == req.params.id) {   
+        console.log('position en el array--> '+position);
+        movies.splice(position,1);
+     
+        console.log('Pelicula borrada--> '+movie.id);
+      }else{
+        console.log('NO borra a id '+movie.id);
+      }
+      position++ 
     });
+    res.send(movies);
+  });
+  
+     
+  
+   
+  
 
 
    /* movies.findById(idRequest,(err, movie)=>{
