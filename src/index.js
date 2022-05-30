@@ -1,6 +1,8 @@
 const express = require('express');
-const app = express();
+const bodyParser = require('body-parser')
 const morgan = require('morgan');
+
+const app = express();
 
 //SERVER
 
@@ -12,8 +14,13 @@ app.set('json spaces', 2)
 
 //middlewares
 app.use(morgan('dev'));
+
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+
+app.use(bodyParser.urlencoded({ extended:false}))
+
+app.use(bodyParser.json());
 
 //routes
 app.use(require('./routes/app'));

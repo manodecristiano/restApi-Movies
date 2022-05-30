@@ -4,6 +4,7 @@ const _ = require('underscore');
 
 const movies = require("../assets/movies2.json");
 
+
 //GET
 router.get('/',(req,res)=>{
   res.json(movies);
@@ -47,19 +48,24 @@ if(title&&age&&gender&&language){
 //PUT
 router.put('/:id',(req,res)=>{
 
-  const idRequest = req.params;
-  const {title, age, gender, language}= req.body;
+  const {title, age, gender, language} = req.body;
+  console.log("id--> "+req.params.id);
 
   if(title&&age&&gender&&language){
 
-    _.each(movies,(movie, i)=>{
+   
+    movies.forEach(movie=>{
       
-      if(movie.id==idRequest){
+      console.log('movie.id--> '+movie.id);
+
+      if(movie.id==req.params.id){
+        console.log('cambio!');
         movie.title=title;
         movie.age=age;
         movie.gender=gender;
         movie.language=language;
       }
+     
     });
 
     res.json(movies);
@@ -67,7 +73,6 @@ router.put('/:id',(req,res)=>{
   }else{
     res.status(500).json({error:'There was an error.'});
   }
-
 })
 
 
