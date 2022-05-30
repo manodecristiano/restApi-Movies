@@ -3,7 +3,11 @@ const router = Router();
 
 //GET
 router.get('/index',(req,res) => {
-    res.json({"Title":"Hello World"});
+  const data ={
+    autor: 'Cristian',
+    website: 'cristiancarreno.com'
+  };
+  res.json(data);
   })
 
   module.exports = router;

@@ -19,12 +19,12 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 app.use(bodyParser.urlencoded({ extended:false}))
-
 app.use(bodyParser.json());
 
 //routes
-app.use(require('./routes/app'));
+app.use('/api/app'   ,require('./routes/app'));
 app.use('/api/movies',require('./routes/movies'));
+app.use('/api/users' ,require('./routes/users'));
 
 
 //starting the server

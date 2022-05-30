@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const router = Router();
+const router = new Router();
 const _ = require('underscore');
 
 const movies = require("../assets/movies2.json");
