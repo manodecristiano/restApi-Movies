@@ -15,19 +15,11 @@ router.get('/',(req,res)=>{
 router.post('/',(req,res) => {
     console.log(req.body);
   
-/*const {adult,backdrop_path,genre_ids,
-  original_language,original_title,overview,
-  popularity,poster_path,release_date,
-  title,video,vote_average,vote_count} = req.body;
-*/
+
 const {title, age, gender, language}= req.body;
   
 if(title&&age&&gender&&language){
-  /*if( adult&&backdrop_path&&genre_ids&&
-  original_language&&original_title&&overview,
-  popularity&&poster_path&&release_date,
-  title&&video&&vote_average&&vote_count){
-*/
+ 
 
     const id= movies.length + 1;
     const newMovie = {...req.body,id};
@@ -77,9 +69,6 @@ router.put('/:id',(req,res)=>{
 
 
 
-
-
-
 //DELETE
   router.delete('/:id',(req,res)=> {
 
@@ -105,22 +94,6 @@ router.put('/:id',(req,res)=>{
      
   
    
-  
-
-
-   /* movies.findById(idRequest,(err, movie)=>{
-      if(err) res.status(500).send({message:`Error al borrar la pelicula: ${err}`})
-
-      movie.remove(err =>{
-        if(err) res.status(500).send({message:`Error al borrar la pelicula: ${err}`}),
-        res.status(200).send({message:`El producto ha sido eliminado`})
-      })
-    })
-
-
-
-  })
-  */
     
 
   module.exports = router;
